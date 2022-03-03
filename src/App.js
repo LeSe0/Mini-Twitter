@@ -3,19 +3,21 @@ import React from "react";
 // styles
 import "./styles.css";
 // Route
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation} from "react-router-dom";
 import { routes } from "./routes";
-import { Link } from "react-router-dom";
 
 function App() {
+
+  const location = useLocation()
+
   return (
     <div className="miniTwitter">
       <Routes>
-        {routes.map((el, i) => {
-          return (
-            <Route path={'/'} key={"route" + i} element = {<el.element />} />
-          );
-        })}
+          {routes.map((el, i) => {
+            return (
+              <Route path={'/*'} key={"route" + i} element = {<el.element />} />
+            );
+          })}
       </Routes>
     </div>
   );
