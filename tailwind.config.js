@@ -80,6 +80,8 @@ module.exports = {
       'lg' : '1024px',
       'maxlg' : {'max' : '1024px'},
       '2xl' :  '1124px',
+
+      'max519px' : {'max' : '519px'}
     },    
 
     extend: {

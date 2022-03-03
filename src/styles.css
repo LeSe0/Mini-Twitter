@@ -42,11 +42,11 @@ button{
 }
 
 .authPartContainer .authPart .authPartTitle{
-    @apply text-[64px] font-black tracking-wide break-words my-[40px]
+    @apply text-[64px] font-black tracking-wide break-words my-[40px] max519px:text-[40px]
 }
 
 .authPart .authPartDescription{
-    @apply mb-[25px] text-[31px] font-black
+    @apply mb-[25px] text-[31px] font-black max519px:text-[23px]
 }
 
 .authByGoogle{
@@ -114,4 +114,16 @@ button{
 
 .authByhaveAnAccountButton{
     @apply text-[#1D9BF0] hover:bg-[rgba(29,155,240,0.1)] border-appleButtonBorder
+}
+
+.mainPageFooterContainer{
+    @apply flex flex-wrap w-full justify-center
+}
+
+.mainPageFooterItem{
+    @apply my-[4px] pr-[16px] text-[#536471] text-[13px] 
+}
+
+.mainFooterItems{
+    @apply cursor-pointer hover:underline
 }
