@@ -1,12 +1,15 @@
 // React
 import React from "react";
 
-function FormAuthByButtons({ data }) {
+function FormAuthByButtons({ data, setActivePage }) {
   return (
     <div>
       {data.map((el, i) => {
         return (
-          <button className="flex">
+          <button key = {el.title + i} className="flex" onClick = {(e) =>{
+            e.preventDefault();
+            el.setPage && setActivePage(el.setPage)
+          }}>
             <div className={`authBy authBy${el.className}`}>
               <div className="authButtonCursor">
                 {el.img && (

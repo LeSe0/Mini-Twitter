@@ -60,14 +60,12 @@ function MainPageFooter() {
     <nav className="mainPageFooterContainer">
       {data.map((el, i) => {
         return (
-          <>
-            <div className="mainPageFooterItem">
-              <span className={i != data.length - 1 && 'mainFooterItems'}>
-                {i == data.length - 1 && <span>&copy;</span>}
+            <div className="mainPageFooterItem" key = {el.title + i}>
+              <span className={i != data.length - 1 ? 'mainFooterItems' : ''}>
+                {i == data.length - 1 ? <span>&copy;</span> : ''}
                 {el.title}
               </span>
             </div>
-          </>
         );
       })}
     </nav>
