@@ -1,51 +1,45 @@
 // React
-import React from "react";
+import React, {useState} from "react";
 // images
 import FormAuthByButtons from "./components/formAuthByButtons";
 import { ReactComponent as GoogleLogo } from "../../../../images/googleLogo.svg";
 import { ReactComponent as AppleLogo } from "../../../../images/appleLogo.svg";
 // components
-import HaveAnAccount from "./components/haveAnAccount";
+import DefaultPage from "./AboutFormPages/DefaultPage";
+import RegisterPage from "./AboutFormPages/RegisterPage";
 
 function AboutForm() {
+  const buttonsFirstData = [
+    {
+      img: GoogleLogo,
+      title: "Sign up with  Google",
+      className: "Google",
+    },
+    {
+      img: AppleLogo,
+      title: "Sign up with  Apple",
+      className: "Apple",
+    },
+  ];
 
-    const buttonsFirstData = [
-        {
-          img: GoogleLogo,
-          title: "Sign up with  Google",
-          className : 'Google'
-        },
-        {
-          img: AppleLogo,
-          title: "Sign up with  Apple",
-          className : 'Apple'
-        },
-      ];
+  let [activePage, setActivePage] = useState('defaultPage')
 
+  const Tabs = {
+    defaultPage : <DefaultPage setActivePage = {setActivePage}/>,
+    registerPage : <RegisterPage setActivePage = {setActivePage}/>
+  }
 
-    const buttonsSecondData = [
-        {
-            title : 'Sign up with phone or email',
-            className : 'Phone'
-        }
-    ]
+  console.log(activePage);
 
   return (
     <form>
-        <FormAuthByButtons data = {buttonsFirstData}/>
-        <div className="otherVariantsForAuth">
-            <div className="leftBorderAuth borderAuth"></div>
-            <span>or</span>
-            <div className="rightBorderAuth borderAuth"></div>
-        </div>
-        <FormAuthByButtons data = {buttonsSecondData} />
-        <div className="authAgreement">
-            By signing up, you agree to the <span>Terms of Service</span> and 
-            <span> Privacy Policy</span>, including <span>Cookie Use</span>.
-        </div>
-        <div className="haveAnAccount">
-            <HaveAnAccount />
-        </div>
+      <FormAuthByButtons data={buttonsFirstData} />
+      <div className="otherVariantsForAuth">
+        <div className="leftBorderAuth borderAuth"></div>
+        <span>or</span>
+        <div className="rightBorderAuth borderAuth"></div>
+      </div>
+      {Tabs[activePage]}
     </form>
   );
 }

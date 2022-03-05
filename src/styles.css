@@ -127,3 +127,19 @@ button{
 .mainFooterItems{
     @apply cursor-pointer hover:underline
 }
+
+.datePickerContainer{
+    @apply flex justify-between 
+}
+
+.Year{
+    @apply w-[25%]
+}
+
+.Month{
+    @apply w-[40%]
+}
+
+.Day{
+    @apply w-[25%]
+}
