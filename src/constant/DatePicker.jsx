@@ -1,8 +1,7 @@
 // React
-import React, { useState } from "react";
+import React from "react";
 // Mui
-import { styled } from "@mui/system";
-import { InputLabel, MenuItem, NativeSelect, Select } from "@material-ui/core";
+import { InputLabel, NativeSelect } from "@material-ui/core";
 import { FormControl } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 
@@ -49,7 +48,6 @@ export default function DatePickerComponent({data , selectDay , selectMonth , se
       <FormControl fullWidth className = {formControl}> 
         <InputLabel id="labelForDate" className={label}>{selectType}</InputLabel>
         <NativeSelect onChange = {(e) =>{
-          console.log(e);
           selectType == "Day" && selectDay(e.target.value)
           selectType == "Month" && selectMonth(e.target.value)
           selectType == "Year" && selectYear(e.target.value)
