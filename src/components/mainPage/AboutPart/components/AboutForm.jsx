@@ -6,7 +6,7 @@ import { ReactComponent as GoogleLogo } from "../../../../images/googleLogo.svg"
 import { ReactComponent as AppleLogo } from "../../../../images/appleLogo.svg";
 // components
 import DefaultPage from "./AboutFormPages/DefaultPage";
-import RegisterPage from "./AboutFormPages/RegisterPage";
+import RegisterPage from "./AboutFormPages/registerPage/RegisterPage"
 
 function AboutForm() {
   const buttonsFirstData = [
@@ -28,8 +28,6 @@ function AboutForm() {
     defaultPage : <DefaultPage setActivePage = {setActivePage}/>,
     registerPage : <RegisterPage setActivePage = {setActivePage}/>
   }
-
-  console.log(activePage);
 
   return (
     <form>

@@ -1,6 +1,5 @@
 // React
 import React, { useState } from "react";
-import DatePickerComponent from "../../../constant/DatePicker";
 // images
 import {ReactComponent as Svg} from '../../../images/twitterLogo.svg'
 import AboutForm from "./components/AboutForm";
@@ -21,7 +20,6 @@ function AuthPart(){
                 <div className="aboutPartFormContainer">
                     <AboutForm />
                 </div>
-                {/* <DatePickerComponent /> */}
             </div>
         </div>
     )
