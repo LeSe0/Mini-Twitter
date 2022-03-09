@@ -23,7 +23,8 @@ const useStyles = makeStyles((theme) =>({
         paddingRight : "20px"
       },
       '& .MuiInputBase-root' : {
-        border : "2px solid #3E5060"
+        border : "2px solid #3E5060",
+        borderRadius : "5px"
       },
       '& .Mui-focused' : {
         border : "2px solid #1D9BF0",
