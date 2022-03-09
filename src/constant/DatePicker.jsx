@@ -1,9 +1,9 @@
 // React
 import React from "react";
 // Mui
-import { InputLabel, NativeSelect } from "@material-ui/core";
-import { FormControl } from "@material-ui/core";
-import { makeStyles } from "@material-ui/styles";
+import { InputLabel, NativeSelect } from "@mui/material";
+import { FormControl } from "@mui/material";
+import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles((theme) =>({
     formControl : {
@@ -15,10 +15,12 @@ const useStyles = makeStyles((theme) =>({
       },
       '& .MuiInput-formControl' : {
         marginTop : "0",
-        paddingTop : "16px",
-        paddingLeft : "5px",
-        paddingRight : "5px",
         color : "black !important",
+      },
+      '& .css-19ygod6-MuiNativeSelect-select-MuiInputBase-input-MuiInput-input' : {
+        paddingTop : "20px",
+        paddingLeft : "20px",
+        paddingRight : "20px"
       },
       '& .MuiInputBase-root' : {
         border : "2px solid #3E5060"
@@ -28,13 +30,13 @@ const useStyles = makeStyles((theme) =>({
         color : '#1D9BF0',
       },
       '& .Mui-focused select' : {
-        background : "none !important"
+        background : "none !important",
+        color : "black !important"
       }
     },
 
     label : {
-      marginTop : "5px",
-      marginLeft : "5px",
+      marginTop : "30px",
       border : "none !important",
     }
 }))
@@ -46,7 +48,7 @@ export default function DatePickerComponent({data , selectDay , selectMonth , se
   return (
     <div className={selectType}>
       <FormControl fullWidth className = {formControl}> 
-        <InputLabel id="labelForDate" className={label}>{selectType}</InputLabel>
+        <InputLabel id="labelForDate" className={label} shrink = {true}>{selectType}</InputLabel>
         <NativeSelect onChange = {(e) =>{
           selectType == "Day" && selectDay(e.target.value)
           selectType == "Month" && selectMonth(e.target.value)
