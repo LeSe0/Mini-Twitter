@@ -4,142 +4,144 @@
 
 /* @import url("./fonts/ProximaNovaFont.otf"); */
 
-html, body {
-    scroll-behavior: smooth;
-    font-family: "Open Sans";
-    color : #0F1419;
+html,
+body {
+  scroll-behavior: smooth;
+  font-family: "Open Sans";
+  color: #0f1419;
 }
 
-button{
-    cursor: default;
+button {
+  cursor: default;
 }
 
 /* Auth Part */
 
-.bigIconPart{
-    @apply bg-bigImageStartPage w-full min-h-[45vh] h-full bg-center bg-cover bg-no-repeat
-    relative flex justify-center items-center
+.bigIconPart {
+  @apply bg-bigImageStartPage w-full min-h-[45vh] h-full bg-center bg-cover bg-no-repeat
+    relative flex justify-center items-center;
 }
 
-.bigIconPart svg{ 
-    @apply fill-[#fff] lg:h-[59%] p-[32px] h-[270px] lg:w-auto
+.bigIconPart svg {
+  @apply fill-[#fff] lg:h-[59%] p-[32px] h-[270px] lg:w-auto;
 }
 
-.bigIconPart svg path{
-    @apply h-full w-full
+.bigIconPart svg path {
+  @apply h-full w-full;
 }
 
-.authPartContainer{
-    @apply p-[16px] maxlg:max-w-[600px] maxlg:mx-auto
+.authPartContainer {
+  @apply p-[16px] maxlg:max-w-[600px] maxlg:mx-auto;
 }
 
-.authPart{
-    @apply p-[20px]
+.authPart {
+  @apply p-[20px];
 }
 
-.authPart .authPartIcon svg{
-    @apply fill-[rgb(29,155,240)] h-[57px] w-[45px] pb-[12px] 
+.authPart .authPartIcon svg {
+  @apply fill-[rgb(29,155,240)] h-[57px] w-[45px] pb-[12px];
 }
 
-.authPartContainer .authPart .authPartTitle{
-    @apply text-[64px] font-black tracking-wide break-words my-[40px] max519px:text-[40px]
+.authPartContainer .authPart .authPartTitle {
+  @apply text-[64px] font-black tracking-wide break-words my-[40px] max519px:text-[40px];
 }
 
-.authPart .authPartDescription{
-    @apply mb-[25px] text-[31px] font-black max519px:text-[23px]
+.authPart .authPartDescription {
+  @apply mb-[25px] text-[31px] font-black max519px:text-[23px];
 }
 
-.authByGoogle{
-    @apply text-sm hover:border-[#d2e3fc] hover:bg-[rgba(66,133,244,0.04)] border-[#dadce0]
+.authByGoogle {
+  @apply text-sm hover:border-[#d2e3fc] hover:bg-[rgba(66,133,244,0.04)] border-[#dadce0] 
+  border-[1px];
 }
 
-.authFormIcon svg{
-    @apply w-[18px] h-[18px]
+.authFormIcon svg {
+  @apply w-[18px] h-[18px];
 }
 
-.authFormIcon{
-    @apply mr-[8px] flex justify-center items-center
+.authFormIcon {
+  @apply mr-[8px] flex justify-center items-center;
 }
 
-.authBy{
-    @apply w-[300px] max-w-[400px] border-[1px] text-[#3c4043] rounded-[20px]
+.authBy {
+  @apply w-[300px] max-w-[400px] border-[1px] text-[#3c4043] rounded-[20px]
     h-[40px] tracking-[0.25px] outline-none overflow-hidden flex mb-[8px] 
-    transition duration-[0.218s]
+    transition duration-[0.218s];
 }
 
-.authButtonCursor{
-    @apply cursor-pointer flex w-full px-[12px] justify-center
-    items-center
+.authButtonCursor {
+  @apply cursor-pointer flex w-full px-[12px] justify-center
+    items-center;
 }
 
-.authFormTitle{
-    @apply font-bold
+.authFormTitle {
+  @apply font-bold;
 }
 
-.authByApple{
-    @apply border-appleButtonBorder hover:bg-[rgb(230,230,230)]  text-[#0F1419]
+.authByApple {
+  @apply border-appleButtonBorder hover:bg-[rgb(230,230,230)]  text-[#0F1419];
 }
 
-.otherVariantsForAuth{
-    @apply text-[15px] relative flex items-center overflow-hidden
+.otherVariantsForAuth {
+  @apply text-[15px] relative flex items-center overflow-hidden;
 }
 
-.otherVariantsForAuth span{
-    @apply mx-[4px]
+.otherVariantsForAuth span {
+  @apply mx-[4px];
 }
 
-.borderAuth{
-    @apply h-[1px] w-[132.1px] bg-[#EFF3F4] mx-[4px] mt-[2.5px]
+.borderAuth {
+  @apply h-[1px] w-[132.1px] bg-[#EFF3F4] mx-[4px] mt-[2.5px];
 }
 
-.authByPhone{
-    @apply mt-[6px] bg-[#1D9BF0] border-[#1D9BF0] text-white hover:bg-[rgb(26,140,216)]
+.authByPhone {
+  @apply mt-[6px] bg-[#1D9BF0] border-[#1D9BF0] text-white hover:bg-[rgb(26,140,216)];
 }
 
-.authAgreement{
-    @apply text-[11px] text-[#536471] max-w-[300px] mb-[20px]
+.authAgreement {
+  @apply text-[11px] text-[#536471] max-w-[300px] mb-[20px];
 }
 
-.authAgreement span{
-    @apply text-[#1D9BF0] hover:underline cursor-pointer
+.authAgreement span {
+  @apply text-[#1D9BF0] hover:underline cursor-pointer;
 }
 
-.haveAccountTitle{
-    @apply text-[16px] text-[#0F1419] font-bold mb-[20px]
+.haveAccountTitle {
+  @apply text-[16px] text-[#0F1419] font-bold mb-[20px];
 }
 
-.haveAccountContainer{
-    @apply mt-[40px]
+.haveAccountContainer {
+  @apply mt-[40px];
 }
 
-.authByhaveAnAccountButton{
-    @apply text-[#1D9BF0] hover:bg-[rgba(29,155,240,0.1)] border-appleButtonBorder
+.authByhaveAnAccountButton {
+  @apply text-[#1D9BF0] hover:bg-[rgba(29,155,240,0.1)] border-appleButtonBorder;
 }
 
-.mainPageFooterContainer{
-    @apply flex flex-wrap w-full justify-center
+.mainPageFooterContainer {
+  @apply flex flex-wrap w-full justify-center;
 }
 
-.mainPageFooterItem{
-    @apply my-[4px] pr-[16px] text-[#536471] text-[13px] 
+.mainPageFooterItem {
+  @apply my-[4px] pr-[16px] text-[#536471] text-[13px];
 }
 
-.mainFooterItems{
-    @apply cursor-pointer hover:underline
+.mainFooterItems {
+  @apply cursor-pointer hover:underline;
 }
 
-.datePickerContainer{
-    @apply flex justify-between 
+.datePickerContainer {
+  @apply flex justify-between;
 }
 
-.Year{
-    @apply w-[25%]
+.Year {
+  @apply w-[25%];
 }
 
-.Month{
-    @apply w-[40%]
+.Month {
+  @apply w-[40%];
 }
 
-.Day{
-    @apply w-[25%]
+.Day {
+  @apply w-[25%];
 }

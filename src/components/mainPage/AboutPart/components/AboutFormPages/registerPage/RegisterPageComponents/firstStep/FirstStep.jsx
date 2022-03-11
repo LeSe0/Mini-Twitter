@@ -1,8 +1,7 @@
 // React
-import React from "react";
+import React, { useState } from "react";
 // components
-import PrevPages from "../../../../../../../../helpers/PrevPages"
-import DatePickerContainer from "../DatePickerContainer"
+import DatePickerContainer from "../DatePickerContainer";
 import TextFieldContainer from "../TextFieldContainer";
 // MUI
 import { Box, Button, Typography } from "@mui/material";
@@ -28,11 +27,9 @@ function FirstStep({
   errorForEmail,
   setErrorForEmail,
   setErrorForPhone,
+  setStep,
+  step 
 }) {
-  const data = {
-    prevPage: "defaultPage",
-    key: "firstRegPage",
-  };
 
   const useStyles = makeStyles({
     button: {
@@ -50,9 +47,28 @@ function FirstStep({
         backgroundColor: "rgb(39, 44, 48) !important",
         borderColor: "rgba(0,0,0,0) !important",
       },
-      '&.css-sghohy-MuiButtonBase-root-MuiButton-root.Mui-disabled' : {
-          backgroundColor : "gray !important"
-      }
+      "&.css-sghohy-MuiButtonBase-root-MuiButton-root.Mui-disabled": {
+        backgroundColor: "gray !important",
+      },
+    },
+
+    secondButton : {
+        width: "100% !important",
+        color: "white !important",
+        fontWeight: "700 !important",
+        fontSize: "15px !important",
+        minHeight: "44px !important",
+        borderRadius: "9999px !important",
+        paddingTop: "12px !important",
+        backgroundColor: "white !important",
+        border: "1px solid rgb(207, 217, 222) !important",
+        boxShadow : "none !important",
+        textTransform: "none !important",
+        color : "#1D9BF0",
+        "&:hover": {
+          backgroundColor: "rgba(29, 155, 240, 0.1) !important",
+          border: "1px solid rgb(207,217,222) !important",
+        },
     },
 
     fieldContainer: {
@@ -60,8 +76,7 @@ function FirstStep({
     },
   });
 
-  const { button, fieldContainer } = useStyles();
-
+  const { button, fieldContainer, secondButton } = useStyles();
   const validationAll =
     name &&
     (email || phone) &&
@@ -75,10 +90,10 @@ function FirstStep({
     <form
       onSubmit={(e) => {
         e.preventDefault();
+        setStep(2)
       }}
     >
       <div className={fieldContainer}>
-        <PrevPages setActivePage={setActivePage} data={data} icon={"close"} />
         <TextFieldContainer
           required
           setNameValue={setNameValue}
@@ -136,6 +151,17 @@ function FirstStep({
       >
         Next
       </Button>
+      <Box>
+          <Typography sx = {{
+              color : "#0F1419 !important",
+              fontWeight : "700",
+              marginTop : "25px",
+              marginBottom : "10px"
+          }}>Already have an account?</Typography>
+        <Button type="button" variant="contained" className={secondButton} onClick = {() =>{
+            setActivePage("defaultPage")
+        }}>Sign in</Button>
+      </Box>
     </form>
   );
 }

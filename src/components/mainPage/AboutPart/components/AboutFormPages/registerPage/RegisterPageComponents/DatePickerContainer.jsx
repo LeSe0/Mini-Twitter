@@ -1,9 +1,12 @@
 // React
-import React from "react";
+import React, { useState } from "react";
 // components
 import DatePickerComponent from "../../../../../../../constant/DatePicker";
 // MUI
-import { Box } from "@mui/material";
+import { Box, TextField, useMediaQuery } from "@mui/material";
+import AdapterDateFns from "@mui/lab/AdapterDateFns";
+import LocalizationProvider from "@mui/lab/LocalizationProvider";
+import { DatePicker } from "@mui/lab";
 
 function DatePickerContainer({
   selectDay,
@@ -11,6 +14,11 @@ function DatePickerContainer({
   selectYear,
   selectedMonth,
   selectedYear,
+  selectedDay,
+  mobilePicker,
+  setMobilePicker,
+  errorForMobilePicker,
+  setErrorForMobilePicker
 }) {
   //  Months
   const months = [
@@ -50,7 +58,7 @@ function DatePickerContainer({
 
   //  Days
   const daysForChoose = [" "];
-  if (selectedMonth) {
+  if (selectedMonth && selectedYear) {
     for (let i = 1; i <= lastDayInMonth; i++) {
       daysForChoose.push(i);
     }
@@ -61,23 +69,28 @@ function DatePickerContainer({
   }
 
   return (
-    <Box className="datePickerContainer">
-      <DatePickerComponent
-        data={months}
-        selectMonth={selectMonth}
-        selectType="Month"
-      />
-      <DatePickerComponent
-        data={daysForChoose}
-        selectDay={selectDay}
-        selectType="Day"
-      />
-      <DatePickerComponent
-        data={yearsForChoose}
-        selectYear={selectYear}
-        selectType="Year"
-      />
-    </Box>
+    <LocalizationProvider dateAdapter={AdapterDateFns}>
+        <Box className="datePickerContainer">
+          <DatePickerComponent
+            data={months}
+            selectMonth={selectMonth}
+            selectType="Month"
+            selectedMonth = {selectedMonth}
+          />
+          <DatePickerComponent
+            data={daysForChoose}
+            selectDay={selectDay}
+            selectType="Day"
+            selectedDay = {selectedDay}
+          />
+          <DatePickerComponent
+            data={yearsForChoose}
+            selectYear={selectYear}
+            selectType="Year"
+            selectedYear = {selectedYear}
+          />
+        </Box>
+    </LocalizationProvider>
   );
 }
 

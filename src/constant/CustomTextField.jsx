@@ -114,7 +114,6 @@ function CustomTextField({
     >
       <TextField
         value={labelText == "Name" ? name : labelText == "Phone" ? phone : email}
-        defaultValue = {''}
         className={formControl}
         fullWidth
         variant="filled"
