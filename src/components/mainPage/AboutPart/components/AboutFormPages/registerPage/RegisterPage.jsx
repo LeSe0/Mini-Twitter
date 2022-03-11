@@ -1,32 +1,26 @@
 // React
 import { React, useState } from "react";
 // components
-import PrevPages from "../../../../../../helpers/PrevPages";
-import DatePickerContainer from "./RegisterPageComponents/DatePickerContainer";
-import TextFieldContainer from "./RegisterPageComponents/TextFieldContainer";
+import FirstStep from "./RegisterPageComponents/firstStep/FirstStep";
 // MUI
-import { Button } from "@mui/material";
-import { makeStyles } from "@mui/styles";
-const useStyles = makeStyles({
-  button: {
-    width: "100%",
-    background: "0F1419",
-    color: "white",
-    fontWeight: "700",
-    fontSize: "15px",
-    minHeight: "44px",
-    borderRadius: "9999px",
-    paddingTop: "12px",
-  },
-});
+import {Box} from "@mui/material";
 
 export default function RegisterPage({ setActivePage }) {
-  const data = {
-    prevPage: "defaultPage",
-    key: "firstRegPage",
-  };
 
-  const { button } = useStyles();
+  const months = {
+    Jan: '01',
+    Feb: '02',
+    Mar: '03',
+    Apr: '04',
+    May: '05',
+    Jun: '06',
+    Jul: '07',
+    Aug: '08',
+    Sep: '09',
+    Oct: '10',
+    Nov: '11',
+    Dec: '12',
+  }
 
   const [name, setNameValue] = useState("");
   const [email, setEmail] = useState("");
@@ -35,53 +29,35 @@ export default function RegisterPage({ setActivePage }) {
   const [selectedMonth, selectMonth] = useState("");
   const [selectedDay, selectDay] = useState("");
   const [error, addError] = useState(false);
-  const [errorForPhone , setErrorForPhone] = useState(false);
-  const [errorForEmail , setErrorForEmail] = useState(false)
+  const [errorForPhone, setErrorForPhone] = useState(false);
+  const [errorForEmail, setErrorForEmail] = useState(false);
 
-  const validationAll =
-    name && (email || phone) && selectedYear && selectedMonth && selectedDay && !error && (!errorForEmail || !errorForPhone);
+  let day = new Date(selectedYear , months[selectedMonth.slice(0,3)] - 1 ,1)
+  console.log(day);
 
   return (
     <div className="mt-[12px]">
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-        }}
-      >
-        <PrevPages setActivePage={setActivePage} data={data} icon={"close"} />
-        <TextFieldContainer
-          required
-          setNameValue={setNameValue}
-          setEmail={setEmail}
-          setPhone={setPhone}
-          addError={addError}
-          name = {name}
-          email = {email}
-          phone = {phone}
-          setErrorForPhone = {setErrorForPhone}
-          setErrorForEmail = {setErrorForEmail}
-          errorForEmail = {errorForEmail}
-          errorForPhone = {errorForPhone}
-        />
-        <DatePickerContainer
-          required
-          selectYear={selectYear}
-          selectedYear={selectedYear}
-          selectMonth={selectMonth}
-          selectedMonth={selectedMonth}
-          selectedDay={selectedDay}
-          selectDay={selectDay}
-          addError = {addError}
-        />
-        <Button
-          type="submit"
-          variant="contained"
-          className={button}
-          disabled={!validationAll}
-        >
-          Next
-        </Button>
-      </form>
+      <FirstStep 
+        setActivePage = {setActivePage}
+        name = {name}
+        setNameValue = {setNameValue}
+        email = {email}
+        setEmail = {setEmail}
+        phone = {phone}
+        setPhone = {setPhone}
+        selectedYear = {selectedYear}
+        selectYear = {selectYear}
+        selectedMonth = {selectedMonth}
+        selectMonth = {selectMonth}
+        selectedDay = {selectedDay}
+        selectDay = {selectDay}
+        error = {error}
+        addError = {addError}
+        errorForPhone = {errorForPhone}
+        errorForEmail = {errorForEmail}
+        setErrorForEmail = {setErrorForEmail}
+        setErrorForPhone = {setErrorForPhone}
+      />
     </div>
   );
 }
