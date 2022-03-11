@@ -30,7 +30,7 @@ function AboutForm() {
   }
 
   return (
-    <form>
+    <div>
       <FormAuthByButtons data={buttonsFirstData} />
       <div className="otherVariantsForAuth">
         <div className="leftBorderAuth borderAuth"></div>
@@ -38,7 +38,7 @@ function AboutForm() {
         <div className="rightBorderAuth borderAuth"></div>
       </div>
       {Tabs[activePage]}
-    </form>
+    </div>
   );
 }
 
