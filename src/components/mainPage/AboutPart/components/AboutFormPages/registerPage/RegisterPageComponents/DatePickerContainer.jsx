@@ -2,6 +2,8 @@
 import React from "react";
 // components
 import DatePickerComponent from "../../../../../../../constant/DatePicker";
+// MUI
+import { Box } from "@mui/material";
 
 function DatePickerContainer({
   selectDay,
@@ -59,7 +61,7 @@ function DatePickerContainer({
   }
 
   return (
-    <div className="datePickerContainer">
+    <Box className="datePickerContainer">
       <DatePickerComponent
         data={months}
         selectMonth={selectMonth}
@@ -75,7 +77,7 @@ function DatePickerContainer({
         selectYear={selectYear}
         selectType="Year"
       />
-    </div>
+    </Box>
   );
 }
 

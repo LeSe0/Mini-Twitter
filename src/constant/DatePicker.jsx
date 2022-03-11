@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) =>({
         paddingRight : "20px"
       },
       '& .MuiInputBase-root' : {
-        border : "2px solid #3E5060",
+        border : "1px solid #3E5060",
         borderRadius : "5px"
       },
       '& .Mui-focused' : {
@@ -63,11 +63,3 @@ export default function DatePickerComponent({data , selectDay , selectMonth , se
     </div>
   );
 }
-
-{/* <CustomSelect sx = {{
-  paddingTop : "20px"
-}}>
-  {yearsForChoose.map((el, i) => {
-    return <StyledOption value={i * 10 + ""}>{el}</StyledOption>;
-  })}
-</CustomSelect> */}
