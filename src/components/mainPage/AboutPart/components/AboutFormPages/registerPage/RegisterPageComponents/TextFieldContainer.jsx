@@ -6,10 +6,20 @@ import CustomTextField from "../../../../../../../constant/CustomTextField";
 import { Box } from "@mui/material";
 import { Typography } from "@mui/material";
 
-function TextFieldContainer({ setEmail, setNameValue, addError , setPhone, email , phone , name }) {
+function TextFieldContainer({
+  setEmail,
+  setNameValue,
+  addError,
+  setPhone,
+  email,
+  phone,
+  name,
+  errorForEmail,
+  errorForPhone,
+  setErrorForEmail,
+  setErrorForPhone
+}) {
   const [registerBy, setRegisterBy] = useState("phone");
-  const [errorForPhone , setErrorForPhone] = useState(false);
-  const [errorForEmail , setErrorForEmail] = useState(false)
 
   let toggleButton = registerBy == "phone" ? "email" : "phone";
 
@@ -18,22 +28,22 @@ function TextFieldContainer({ setEmail, setNameValue, addError , setPhone, email
       <CustomTextField
         labelText={"Phone"}
         errorText={"Please enter a valid phone number."}
-        setPhone = {setPhone}
-        addError = {addError}
-        phone = {phone}
-        setErrorForPhone = {setErrorForPhone}
-        errorForPhone = {errorForPhone}
+        setPhone={setPhone}
+        addError={addError}
+        phone={phone}
+        setErrorForPhone={setErrorForPhone}
+        errorForPhone={errorForPhone}
       />
     ),
     email: (
       <CustomTextField
         labelText={"Email"}
         errorText={"Please enter a valid email."}
-        setEmail = {setEmail}
-        addError = {addError}
-        email = {email}
-        setErrorForEmail = {setErrorForEmail}
-        errorForEmail = {errorForEmail}
+        setEmail={setEmail}
+        addError={addError}
+        email={email}
+        setErrorForEmail={setErrorForEmail}
+        errorForEmail={errorForEmail}
       />
     ),
   };
@@ -44,8 +54,8 @@ function TextFieldContainer({ setEmail, setNameValue, addError , setPhone, email
         labelText={"Name"}
         errorText={"What’s your name?"}
         setNameValue={setNameValue}
-        addError = {addError}
-        name = {name}
+        addError={addError}
+        name={name}
       />
       {activeRegisterBy[registerBy]}
       <Typography
@@ -56,8 +66,8 @@ function TextFieldContainer({ setEmail, setNameValue, addError , setPhone, email
         }}
         onClick={() => {
           setRegisterBy(toggleButton);
-          setPhone('')
-          setEmail('')
+          setPhone("");
+          setEmail("");
           setErrorForEmail(false);
           setErrorForPhone(false);
         }}

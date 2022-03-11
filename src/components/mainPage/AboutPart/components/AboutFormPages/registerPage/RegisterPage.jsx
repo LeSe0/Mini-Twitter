@@ -34,10 +34,12 @@ export default function RegisterPage({ setActivePage }) {
   const [selectedYear, selectYear] = useState("");
   const [selectedMonth, selectMonth] = useState("");
   const [selectedDay, selectDay] = useState("");
-  const [error, addError] = useState();
+  const [error, addError] = useState(false);
+  const [errorForPhone , setErrorForPhone] = useState(false);
+  const [errorForEmail , setErrorForEmail] = useState(false)
 
   const validationAll =
-    name && email && phone && selectedYear && selectedMonth && selectedDay && !error;
+    name && (email || phone) && selectedYear && selectedMonth && selectedDay && !error && (!errorForEmail || !errorForPhone);
 
   return (
     <div className="mt-[12px]">
@@ -56,6 +58,10 @@ export default function RegisterPage({ setActivePage }) {
           name = {name}
           email = {email}
           phone = {phone}
+          setErrorForPhone = {setErrorForPhone}
+          setErrorForEmail = {setErrorForEmail}
+          errorForEmail = {errorForEmail}
+          errorForPhone = {errorForPhone}
         />
         <DatePickerContainer
           required
