@@ -1,5 +1,5 @@
 // React
-import { React, useState } from "react";
+import { React, useEffect, useState } from "react";
 // components
 import FirstStep from "./RegisterPageComponents/firstStep/FirstStep";
 import SecondStep from "./RegisterPageComponents/secondStep/SecondStep";
@@ -60,12 +60,16 @@ export default function RegisterPage({ setActivePage }) {
   const [errorForPhone, setErrorForPhone] = useState(false);
   const [errorForEmail, setErrorForEmail] = useState(false);
   const [step, setStep] = useState(1);
+  const [mobilePicker , setMobilePicker] = useState(selectedMonth && selectedDay && selectedYear
+    ? new Date(selectedYear, selectedMonth - 1, selectedDay)
+    : new Date(2022 , 8 , 1))
 
+    
   let dateFromPicker =
-    selectedYear &&
-    selectedMonth &&
-    selectedDay &&
-    new Date(selectedYear, months[selectedMonth.slice(0, 3)] - 1, 1);
+  selectedYear &&
+  selectedMonth &&
+  selectedDay &&
+  new Date(selectedYear, months[selectedMonth.slice(0, 3)] - 1, 1);    
 
   const data = {
     prevPage: "defaultPage",
@@ -101,6 +105,8 @@ export default function RegisterPage({ setActivePage }) {
         setErrorForPhone={setErrorForPhone}
         setStep={setStep}
         step={step}
+        mobilePicker = {mobilePicker}
+        setMobilePicker = {setMobilePicker}
       />
     ),
     2: <SecondStep setStep={setStep} step={step} />,

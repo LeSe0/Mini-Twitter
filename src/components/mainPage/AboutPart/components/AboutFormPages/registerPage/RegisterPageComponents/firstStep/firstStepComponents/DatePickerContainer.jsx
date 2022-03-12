@@ -3,10 +3,7 @@ import React, { useState } from "react";
 // components
 import DatePickerComponent from "./DatePicker";
 // MUI
-import { Box, TextField, useMediaQuery } from "@mui/material";
-import AdapterDateFns from "@mui/lab/AdapterDateFns";
-import LocalizationProvider from "@mui/lab/LocalizationProvider";
-import { DatePicker } from "@mui/lab";
+import { Box } from "@mui/material";
 
 function DatePickerContainer({
   selectDay,
@@ -15,10 +12,6 @@ function DatePickerContainer({
   selectedMonth,
   selectedYear,
   selectedDay,
-  mobilePicker,
-  setMobilePicker,
-  errorForMobilePicker,
-  setErrorForMobilePicker
 }) {
   //  Months
   const months = [
@@ -69,28 +62,26 @@ function DatePickerContainer({
   }
 
   return (
-    <LocalizationProvider dateAdapter={AdapterDateFns}>
-        <Box className="datePickerContainer">
-          <DatePickerComponent
-            data={months}
-            selectMonth={selectMonth}
-            selectType="Month"
-            selectedMonth = {selectedMonth}
-          />
-          <DatePickerComponent
-            data={daysForChoose}
-            selectDay={selectDay}
-            selectType="Day"
-            selectedDay = {selectedDay}
-          />
-          <DatePickerComponent
-            data={yearsForChoose}
-            selectYear={selectYear}
-            selectType="Year"
-            selectedYear = {selectedYear}
-          />
-        </Box>
-    </LocalizationProvider>
+    <Box className="datePickerContainer">
+      <DatePickerComponent
+        data={months}
+        selectMonth={selectMonth}
+        selectType="Month"
+        selectedMonth={selectedMonth}
+      />
+      <DatePickerComponent
+        data={daysForChoose}
+        selectDay={selectDay}
+        selectType="Day"
+        selectedDay={selectedDay}
+      />
+      <DatePickerComponent
+        data={yearsForChoose}
+        selectYear={selectYear}
+        selectType="Year"
+        selectedYear={selectedYear}
+      />
+    </Box>
   );
 }
 

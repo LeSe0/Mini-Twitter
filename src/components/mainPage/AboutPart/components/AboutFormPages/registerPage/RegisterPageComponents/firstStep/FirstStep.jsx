@@ -1,16 +1,16 @@
 // React
 import React from "react";
 // components
-import DatePickerContainer from "./firstStepComponents/DatePickerContainer"
+import DatePickerContainer from "./firstStepComponents/DatePickerContainer";
 import TextFieldContainer from "./firstStepComponents/TextFieldContainer";
 import RegisterPageHeader from "../../../../../../../../helpers/RegisterPageHeader";
+import NextButton from "../../../../../../../../helpers/NextButton";
 // MUI
 import { Box, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import NextButton from "../../../../../../../../helpers/NextButton";
+import DatePickerDiffDevices from "./datePickerForDevices/DatePickerDiffDevices";
 
 function FirstStep({
-  setActivePage,
   name,
   setNameValue,
   email,
@@ -30,9 +30,9 @@ function FirstStep({
   setErrorForEmail,
   setErrorForPhone,
   setStep,
-  step 
+  mobilePicker,
+  setMobilePicker
 }) {
-
   const useStyles = makeStyles({
     fieldContainer: {
       marginBottom: "64px",
@@ -43,9 +43,9 @@ function FirstStep({
   const validationAll =
     name &&
     (email || phone) &&
-    selectedYear &&
+    (selectedYear &&
     selectedMonth &&
-    selectedDay &&
+    selectedDay || mobilePicker && mobilePicker != "Invalid Date") &&
     !error &&
     (!errorForEmail || !errorForPhone);
 
@@ -53,10 +53,10 @@ function FirstStep({
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        setStep(2)
+        setStep(2);
       }}
     >
-      <RegisterPageHeader title = "Create your account" />
+      <RegisterPageHeader title="Create your account" />
       <div className={fieldContainer}>
         <TextFieldContainer
           required
@@ -96,8 +96,7 @@ function FirstStep({
             account is for a business, a pet, or something else.
           </Typography>
         </Box>
-        <DatePickerContainer
-          required
+        <DatePickerDiffDevices
           selectYear={selectYear}
           selectedYear={selectedYear}
           selectMonth={selectMonth}
@@ -105,9 +104,11 @@ function FirstStep({
           selectedDay={selectedDay}
           selectDay={selectDay}
           addError={addError}
+          mobilePicker = {mobilePicker}
+          setMobilePicker = {setMobilePicker}
         />
       </div>
-      <NextButton disabled = {!validationAll} name = "Next"/>
+      <NextButton disabled={!validationAll} name="Next" />
     </form>
   );
 }
