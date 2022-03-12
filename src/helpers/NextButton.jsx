@@ -26,7 +26,7 @@ const useStyles = makeStyles({
     }
 })
 
-function NextButton({disabled}){
+function NextButton({disabled, name}){
 
     const {button} = useStyles()
 
@@ -37,7 +37,7 @@ function NextButton({disabled}){
         className={button}
         disabled={disabled}
       >
-        Next
+        {name}
       </Button>
     )
 }

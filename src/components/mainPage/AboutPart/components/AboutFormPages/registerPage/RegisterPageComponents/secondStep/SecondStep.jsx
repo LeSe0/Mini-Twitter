@@ -24,7 +24,7 @@ function SecondStep({step , setStep}){
                 <Content accept = {accept} setAccept = {setAccept}/>
                 <Footer />
             </Box>
-            <NextButton disabled = {false}/>    
+            <NextButton disabled = {false} name = "Next"/>    
 
         </form>
     )

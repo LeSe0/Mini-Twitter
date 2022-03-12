@@ -124,7 +124,7 @@ function FirstStep({
           addError={addError}
         />
       </div>
-      <NextButton disabled = {!validationAll}/>
+      <NextButton disabled = {!validationAll} name = "Next"/>
       <Box>
           <Typography sx = {{
               color : "#0F1419 !important",
