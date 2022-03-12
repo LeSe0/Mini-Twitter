@@ -1,17 +1,14 @@
 // React
 import React from "react";
 // MUI
-import { Box, Checkbox, Grid, InputLabel, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
+// components
+import RegisterPageHeader from "../../../../../../../../../helpers/RegisterPageHeader";
 
 function Header(){
     return (
         <Box>
-            <Typography sx = {{
-                color : "#0F1419",
-                fontSize : "22px",
-                fontWeight : "700",
-                marginBottom : "11px"
-            }}>Customize your experience</Typography>
+            <RegisterPageHeader title="Customize your experience" />
             <Typography sx = {{
                 color : "#0F1419",
                 fontSize : "19px",

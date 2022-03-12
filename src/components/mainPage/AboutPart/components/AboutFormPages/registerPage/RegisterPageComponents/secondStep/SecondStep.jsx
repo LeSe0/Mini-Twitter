@@ -18,7 +18,6 @@ function SecondStep({step , setStep}){
             e.preventDefault()
             setStep(3)
         }}>
-            <RegisterPageHeader title = 'Customize your experience'/>
             <Box sx = {{
                 marginBottom : "50px"
             }}>
@@ -27,7 +26,6 @@ function SecondStep({step , setStep}){
                 <Footer />
             </Box>
             <NextButton disabled = {false} name = "Next"/>    
-
         </form>
     )
 }
