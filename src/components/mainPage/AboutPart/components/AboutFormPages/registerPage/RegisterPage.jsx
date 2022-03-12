@@ -8,8 +8,33 @@ import Steps from "../../../../../../helpers/Steps";
 import LastStep from "./RegisterPageComponents/lastStep/LastStep";
 // MUI
 import { Box, Grid, Typography, Button } from "@mui/material";
+import { makeStyles } from "@mui/styles";
+
+const useStyles = makeStyles({
+  signInButton : {
+      width: "100% !important",
+      color: "white !important",
+      fontWeight: "700 !important",
+      fontSize: "15px !important",
+      minHeight: "44px !important",
+      borderRadius: "9999px !important",
+      paddingTop: "12px !important",
+      backgroundColor: "white !important",
+      border: "1px solid rgb(207, 217, 222) !important",
+      boxShadow : "none !important",
+      textTransform: "none !important",
+      color : "#1D9BF0",
+      "&:hover": {
+        backgroundColor: "rgba(29, 155, 240, 0.1) !important",
+        border: "1px solid rgb(207,217,222) !important",
+      },
+  },
+});
 
 export default function RegisterPage({ setActivePage }) {
+  
+  const { signInButton } = useStyles()
+
   const months = {
     Jan: "01",
     Feb: "02",
@@ -126,7 +151,7 @@ export default function RegisterPage({ setActivePage }) {
               marginTop : "25px",
               marginBottom : "10px"
           }}>Already have an account?</Typography>
-        <Button type="button" variant="contained" className={secondButton} onClick = {() =>{
+        <Button type="button" variant="contained" className={signInButton} onClick = {() =>{
             setActivePage("defaultPage")
         }}>Sign in</Button>
       </Box>

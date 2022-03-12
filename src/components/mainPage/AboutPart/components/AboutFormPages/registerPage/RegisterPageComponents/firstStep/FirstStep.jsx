@@ -1,10 +1,10 @@
 // React
-import React, { useState } from "react";
+import React from "react";
 // components
 import DatePickerContainer from "../DatePickerContainer";
 import TextFieldContainer from "../TextFieldContainer";
 // MUI
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import NextButton from "../../../../../../../../helpers/NextButton";
 
@@ -33,31 +33,12 @@ function FirstStep({
 }) {
 
   const useStyles = makeStyles({
-    secondButton : {
-        width: "100% !important",
-        color: "white !important",
-        fontWeight: "700 !important",
-        fontSize: "15px !important",
-        minHeight: "44px !important",
-        borderRadius: "9999px !important",
-        paddingTop: "12px !important",
-        backgroundColor: "white !important",
-        border: "1px solid rgb(207, 217, 222) !important",
-        boxShadow : "none !important",
-        textTransform: "none !important",
-        color : "#1D9BF0",
-        "&:hover": {
-          backgroundColor: "rgba(29, 155, 240, 0.1) !important",
-          border: "1px solid rgb(207,217,222) !important",
-        },
-    },
-
     fieldContainer: {
       marginBottom: "64px",
     },
   });
 
-  const { fieldContainer, secondButton } = useStyles();
+  const { fieldContainer } = useStyles();
   const validationAll =
     name &&
     (email || phone) &&
@@ -125,17 +106,6 @@ function FirstStep({
         />
       </div>
       <NextButton disabled = {!validationAll} name = "Next"/>
-      <Box>
-          <Typography sx = {{
-              color : "#0F1419 !important",
-              fontWeight : "700",
-              marginTop : "25px",
-              marginBottom : "10px"
-          }}>Already have an account?</Typography>
-        <Button type="button" variant="contained" className={secondButton} onClick = {() =>{
-            setActivePage("defaultPage")
-        }}>Sign in</Button>
-      </Box>
     </form>
   );
 }
