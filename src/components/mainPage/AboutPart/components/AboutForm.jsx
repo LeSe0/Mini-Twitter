@@ -28,7 +28,8 @@ function AboutForm() {
   const Tabs = {
     defaultPage : <DefaultPage setActivePage = {setActivePage}/>,
     registerPage : <RegisterPage setActivePage = {setActivePage}/>,
-    loginPage : <Login setActivePage = {setActivePage}/>
+    loginPage : <Login setActivePage = {setActivePage}/>,
+    forgotPasswordPage : ""
   }
 
   return (
