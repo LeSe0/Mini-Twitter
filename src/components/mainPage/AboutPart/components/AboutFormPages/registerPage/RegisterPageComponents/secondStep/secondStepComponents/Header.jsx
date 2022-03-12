@@ -3,12 +3,12 @@ import React from "react";
 // MUI
 import { Box, Typography } from "@mui/material";
 // components
-import RegisterPageHeader from "../../../../../../../../../helpers/RegisterPageHeader";
+import StepsHeader from "../../../../../../../../../helpers/StepsHeader";
 
 function Header(){
     return (
         <Box>
-            <RegisterPageHeader title="Customize your experience" />
+            <StepsHeader title="Customize your experience" />
             <Typography sx = {{
                 color : "#0F1419",
                 fontSize : "19px",

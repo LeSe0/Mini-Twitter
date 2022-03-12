@@ -1,9 +1,8 @@
 // React
 import React from "react";
 // components
-import DatePickerContainer from "./firstStepComponents/DatePickerContainer";
 import TextFieldContainer from "./firstStepComponents/TextFieldContainer";
-import RegisterPageHeader from "../../../../../../../../helpers/RegisterPageHeader";
+import StepsHeader from "../../../../../../../../helpers/StepsHeader";
 import NextButton from "../../../../../../../../helpers/NextButton";
 // MUI
 import { Box, Typography } from "@mui/material";
@@ -56,7 +55,7 @@ function FirstStep({
         setStep(2);
       }}
     >
-      <RegisterPageHeader title="Create your account" />
+      <StepsHeader title="Create your account" />
       <div className={fieldContainer}>
         <TextFieldContainer
           required

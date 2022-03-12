@@ -7,6 +7,7 @@ import { ReactComponent as AppleLogo } from "../../../../images/appleLogo.svg";
 // components
 import DefaultPage from "./AboutFormPages/DefaultPage";
 import RegisterPage from "./AboutFormPages/registerPage/RegisterPage"
+import Login from "./AboutFormPages/loginPage/Login";
 
 function AboutForm() {
   const buttonsFirstData = [
@@ -26,7 +27,8 @@ function AboutForm() {
 
   const Tabs = {
     defaultPage : <DefaultPage setActivePage = {setActivePage}/>,
-    registerPage : <RegisterPage setActivePage = {setActivePage}/>
+    registerPage : <RegisterPage setActivePage = {setActivePage}/>,
+    loginPage : <Login setActivePage = {setActivePage}/>
   }
 
   return (

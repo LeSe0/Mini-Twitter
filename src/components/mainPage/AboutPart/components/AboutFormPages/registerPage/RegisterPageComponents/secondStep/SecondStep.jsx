@@ -7,7 +7,6 @@ import NextButton from "../../../../../../../../helpers/NextButton";
 import Header from "./secondStepComponents/Header";
 import Content from './secondStepComponents/Content'
 import Footer from './secondStepComponents/Footer'
-import RegisterPageHeader from "../../../../../../../../helpers/RegisterPageHeader";
 
 function SecondStep({step , setStep}){
 

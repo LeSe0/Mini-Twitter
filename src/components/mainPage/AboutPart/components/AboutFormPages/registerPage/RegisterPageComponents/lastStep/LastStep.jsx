@@ -4,7 +4,7 @@ import React from "react";
 import NextButton from "../../../../../../../../helpers/NextButton";
 import CustomTextField from "./lastStepComponents/customTextField";
 import Footer from "./lastStepComponents/Footer"
-import RegisterPageHeader from "../../../../../../../../helpers/RegisterPageHeader";
+import StepsHeader from "../../../../../../../../helpers/StepsHeader";
 
 function LastStep({
   months,
@@ -26,7 +26,7 @@ function LastStep({
         e.preventDefault();
       }}
     >
-      <RegisterPageHeader title = "Create your account" />
+      <StepsHeader title = "Create your account" />
       <CustomTextField
         value={name}
         labelText="Name"

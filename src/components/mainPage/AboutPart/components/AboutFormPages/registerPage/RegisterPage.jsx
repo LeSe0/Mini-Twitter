@@ -13,7 +13,6 @@ import { makeStyles } from "@mui/styles";
 const useStyles = makeStyles({
   signInButton : {
       width: "100% !important",
-      color: "white !important",
       fontWeight: "700 !important",
       fontSize: "15px !important",
       minHeight: "44px !important",
@@ -23,7 +22,7 @@ const useStyles = makeStyles({
       border: "1px solid rgb(207, 217, 222) !important",
       boxShadow : "none !important",
       textTransform: "none !important",
-      color : "#1D9BF0",
+      color : "#1D9BF0 !important",
       "&:hover": {
         backgroundColor: "rgba(29, 155, 240, 0.1) !important",
         border: "1px solid rgb(207,217,222) !important",
@@ -158,7 +157,7 @@ export default function RegisterPage({ setActivePage }) {
               marginBottom : "10px"
           }}>Already have an account?</Typography>
         <Button type="button" variant="contained" className={signInButton} onClick = {() =>{
-            setActivePage("defaultPage")
+            setActivePage("loginPage")
         }}>Sign in</Button>
       </Box>
     </Box>
