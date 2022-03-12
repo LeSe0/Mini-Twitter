@@ -22,7 +22,7 @@ function DefaultPage({setActivePage}) {
         <span> Privacy Policy</span>, including <span>Cookie Use</span>.
       </div>
       <div className="haveAnAccount">
-        <HaveAnAccount />
+        <HaveAnAccount setActivePage = {setActivePage}/>
       </div>
     </div>
   );
