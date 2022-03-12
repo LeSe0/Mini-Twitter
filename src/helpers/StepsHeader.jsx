@@ -3,7 +3,7 @@ import React from "react";
 // MUI
 import { Typography } from "@mui/material";
 
-function RegisterPageHeader({title}){
+function StepsHeader({title}){
     return (
         <Typography sx={{
             fontSize : "23px",
@@ -15,4 +15,4 @@ function RegisterPageHeader({title}){
     )
 }
 
-export default RegisterPageHeader
+export default StepsHeader
