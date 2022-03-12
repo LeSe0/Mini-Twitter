@@ -17,6 +17,7 @@ function NextButton({ disabled, name, btnData }) {
       backgroundColor: `${btnData.backgroundColor} !important`,
       borderColor: `${btnData.borderColor} !important`,
       textTransform: "none !important",
+      border : "1px solid",
       "&:hover": {
         backgroundColor: `${btnData.focusedBackground} !important`,
         borderColor: `${btnData.focusedBorder} !important`,
