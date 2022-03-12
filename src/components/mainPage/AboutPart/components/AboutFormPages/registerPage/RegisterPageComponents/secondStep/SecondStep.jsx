@@ -13,7 +13,8 @@ function SecondStep({step , setStep}){
     const [accept , setAccept] = useState(false)
 
     return (
-        <form onSubmit={() =>{
+        <form onSubmit={(e) =>{
+            e.preventDefault()
             setStep(3)
         }}>
             <Box sx = {{
