@@ -12,6 +12,18 @@ function SecondStep({step , setStep}){
 
     const [accept , setAccept] = useState(false)
 
+    const btnData = {
+        color : "white",
+        borderColor : "rgba(0,0,0,0)",
+        backgroundColor : "rgb(15, 20, 25)",
+        focusedColor : "white",
+        focusedBackground : "rgb(39, 44, 48)",
+        focusedBorder : "rgba(0,0,0,0)",
+        disabledColor : "white",
+        disabledBackground : "gray",
+        disabledBorder : "blue"
+    }
+
     return (
         <form onSubmit={(e) =>{
             e.preventDefault()
@@ -24,7 +36,7 @@ function SecondStep({step , setStep}){
                 <Content accept = {accept} setAccept = {setAccept}/>
                 <Footer />
             </Box>
-            <NextButton disabled = {false} name = "Next"/>    
+            <NextButton disabled = {false} name = "Next" btnData = {btnData}/>    
         </form>
     )
 }

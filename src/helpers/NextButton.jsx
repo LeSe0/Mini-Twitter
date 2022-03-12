@@ -4,42 +4,41 @@ import React from "react";
 import { Button } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 
-const useStyles = makeStyles({
+function NextButton({ disabled, name, btnData }) {
+  const useStyles = makeStyles({
     button: {
       width: "100% !important",
-      color: "white !important",
+      color: `${btnData.color} !important`,
       fontWeight: "700 !important",
       fontSize: "15px !important",
       minHeight: "44px !important",
       borderRadius: "9999px !important",
       paddingTop: "12px !important",
-      backgroundColor: "rgb(15, 20, 25) !important",
-      borderColor: "rgba(0,0,0,0) !important",
+      backgroundColor: `${btnData.backgroundColor} !important`,
+      borderColor: `${btnData.borderColor} !important`,
       textTransform: "none !important",
       "&:hover": {
-        backgroundColor: "rgb(39, 44, 48) !important",
-        borderColor: "rgba(0,0,0,0) !important",
+        backgroundColor: `${btnData.focusedBackground} !important`,
+        borderColor: `${btnData.focusedBorder} !important`,
       },
       "&.css-sghohy-MuiButtonBase-root-MuiButton-root.Mui-disabled": {
-        backgroundColor: "gray !important",
+        backgroundColor: `${btnData.disabledBackground} !important`,
       },
-    }
-})
+    },
+  });
 
-function NextButton({disabled, name}){
+  const { button } = useStyles();
 
-    const {button} = useStyles()
-
-    return (
-        <Button
-        type="submit"
-        variant="contained"
-        className={button}
-        disabled={disabled}
-      >
-        {name}
-      </Button>
-    )
+  return (
+    <Button
+      type="submit"
+      variant="contained"
+      className={button}
+      disabled={disabled}
+    >
+      {name}
+    </Button>
+  );
 }
 
-export default NextButton
+export default NextButton;

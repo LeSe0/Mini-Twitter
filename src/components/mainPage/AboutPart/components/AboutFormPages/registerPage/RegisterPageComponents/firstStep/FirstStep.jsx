@@ -30,7 +30,7 @@ function FirstStep({
   setErrorForPhone,
   setStep,
   mobilePicker,
-  setMobilePicker
+  setMobilePicker,
 }) {
   const useStyles = makeStyles({
     fieldContainer: {
@@ -42,11 +42,22 @@ function FirstStep({
   const validationAll =
     name &&
     (email || phone) &&
-    (selectedYear &&
-    selectedMonth &&
-    selectedDay || mobilePicker && mobilePicker != "Invalid Date") &&
+    ((selectedYear && selectedMonth && selectedDay) ||
+      (mobilePicker && mobilePicker != "Invalid Date")) &&
     !error &&
     (!errorForEmail || !errorForPhone);
+
+  const btnData = {
+    color: "white",
+    borderColor: "rgba(0,0,0,0)",
+    backgroundColor: "rgb(15, 20, 25)",
+    focusedColor: "white",
+    focusedBackground: "rgb(39, 44, 48)",
+    focusedBorder: "rgba(0,0,0,0)",
+    disabledColor: "white",
+    disabledBackground: "gray",
+    disabledBorder: "blue",
+  };
 
   return (
     <form
@@ -103,11 +114,11 @@ function FirstStep({
           selectedDay={selectedDay}
           selectDay={selectDay}
           addError={addError}
-          mobilePicker = {mobilePicker}
-          setMobilePicker = {setMobilePicker}
+          mobilePicker={mobilePicker}
+          setMobilePicker={setMobilePicker}
         />
       </div>
-      <NextButton disabled={!validationAll} name="Next" />
+      <NextButton disabled={!validationAll} name="Next" btnData = {btnData}/>
     </form>
   );
 }

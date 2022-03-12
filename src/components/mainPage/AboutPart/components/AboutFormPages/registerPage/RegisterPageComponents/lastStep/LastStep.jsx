@@ -3,7 +3,7 @@ import React from "react";
 // components
 import NextButton from "../../../../../../../../helpers/NextButton";
 import CustomTextField from "./lastStepComponents/customTextField";
-import Footer from "./lastStepComponents/Footer"
+import Footer from "./lastStepComponents/Footer";
 import StepsHeader from "../../../../../../../../helpers/StepsHeader";
 
 function LastStep({
@@ -20,13 +20,25 @@ function LastStep({
 }) {
   const date = `${selectedMonth.slice(0, 3)} ${selectedDay} , ${selectedYear}`;
 
+  const btnData = {
+    color: "white",
+    borderColor: "rgba(0,0,0,0)",
+    backgroundColor: "rgb(15, 20, 25)",
+    focusedColor: "white",
+    focusedBackground: "rgb(39, 44, 48)",
+    focusedBorder: "rgba(0,0,0,0)",
+    disabledColor: "white",
+    disabledBackground: "gray",
+    disabledBorder: "blue",
+  };
+
   return (
     <form
       onSubmit={(e) => {
         e.preventDefault();
       }}
     >
-      <StepsHeader title = "Create your account" />
+      <StepsHeader title="Create your account" />
       <CustomTextField
         value={name}
         labelText="Name"
@@ -50,7 +62,7 @@ function LastStep({
       />
 
       <Footer />
-      <NextButton disabled={false} name="Sign up"/>
+      <NextButton disabled={false} name="Sign up" btnData={btnData} />
     </form>
   );
 }
