@@ -1,11 +1,10 @@
 // React
 import React from "react";
-// MUI
-import { Typography } from "@mui/material";
 // components
 import NextButton from "../../../../../../../../helpers/NextButton";
 import CustomTextField from "./lastStepComponents/customTextField";
 import Footer from "./lastStepComponents/Footer"
+import RegisterPageHeader from "../../../../../../../../helpers/RegisterPageHeader";
 
 function LastStep({
   months,
@@ -27,13 +26,7 @@ function LastStep({
         e.preventDefault();
       }}
     >
-      <Typography sx={{
-          fontSize : "23px",
-          color : "#0F1419",
-          fontWeight : "700",
-          marginTop : "10px",
-          marginBottom : "10px"
-      }}>Create your account</Typography>
+      <RegisterPageHeader title = "Create your account" />
       <CustomTextField
         value={name}
         labelText="Name"
