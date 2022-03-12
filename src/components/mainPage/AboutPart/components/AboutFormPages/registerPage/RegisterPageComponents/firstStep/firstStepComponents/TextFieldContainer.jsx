@@ -1,7 +1,7 @@
 // React
 import React, { useState } from "react";
 // components
-import CustomTextField from "../../../../../../../constant/CustomTextFieldForRegistration";
+import CustomTextField from "./CustomTextFieldForRegistration";
 // MUI
 import { Box } from "@mui/material";
 import { Typography } from "@mui/material";
