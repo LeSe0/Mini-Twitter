@@ -6,6 +6,7 @@ import TextFieldContainer from "../TextFieldContainer";
 // MUI
 import { Box, Button, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
+import NextButton from "../../../../../../../../helpers/NextButton";
 
 function FirstStep({
   setActivePage,
@@ -32,26 +33,6 @@ function FirstStep({
 }) {
 
   const useStyles = makeStyles({
-    button: {
-      width: "100% !important",
-      color: "white !important",
-      fontWeight: "700 !important",
-      fontSize: "15px !important",
-      minHeight: "44px !important",
-      borderRadius: "9999px !important",
-      paddingTop: "12px !important",
-      backgroundColor: "rgb(15, 20, 25) !important",
-      borderColor: "rgba(0,0,0,0) !important",
-      textTransform: "none !important",
-      "&:hover": {
-        backgroundColor: "rgb(39, 44, 48) !important",
-        borderColor: "rgba(0,0,0,0) !important",
-      },
-      "&.css-sghohy-MuiButtonBase-root-MuiButton-root.Mui-disabled": {
-        backgroundColor: "gray !important",
-      },
-    },
-
     secondButton : {
         width: "100% !important",
         color: "white !important",
@@ -76,7 +57,7 @@ function FirstStep({
     },
   });
 
-  const { button, fieldContainer, secondButton } = useStyles();
+  const { fieldContainer, secondButton } = useStyles();
   const validationAll =
     name &&
     (email || phone) &&
@@ -143,14 +124,7 @@ function FirstStep({
           addError={addError}
         />
       </div>
-      <Button
-        type="submit"
-        variant="contained"
-        className={button}
-        disabled={!validationAll}
-      >
-        Next
-      </Button>
+      <NextButton disabled = {!validationAll}/>
       <Box>
           <Typography sx = {{
               color : "#0F1419 !important",
