@@ -15,7 +15,7 @@ function Login({ setActivePage }) {
 
   const steps = {
     step: step,
-    stepsCount: 3,
+    stepsCount: 2,
   };
 
   const data = {
