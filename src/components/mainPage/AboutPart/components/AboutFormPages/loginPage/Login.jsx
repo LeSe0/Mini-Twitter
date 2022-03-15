@@ -48,9 +48,7 @@ function Login({ setActivePage }) {
       />
     ),
   };
-
-  console.log(fStepvalue);
-
+  
   return (
     <Box>
       <LoginHeader

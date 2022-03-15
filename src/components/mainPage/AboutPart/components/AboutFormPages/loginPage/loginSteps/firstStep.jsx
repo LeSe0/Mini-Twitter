@@ -29,8 +29,9 @@ function LoginFirstStep({
   return (
     <form
       onSubmit={(e) => {
-        e.preventDefault;
-        setStep(2)
+        e.preventDefault();
+        setStep(2);
+        window.scroll(0 , 350);
       }}
     >
       <StepsHeader title="Sign in to Twitter" />

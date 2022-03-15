@@ -42,7 +42,6 @@ function SecondStep({
         setValue={setPassword}
         type="password"
       />
-      
       <NextButton btnData={btnData} disabled={password ? false : true} name = "Log in"/>
     </Box>
   );
