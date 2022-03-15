@@ -4,13 +4,14 @@ import React, { useState } from "react";
 import ForgotHeader from "./components/Header";
 import StepsHeader from "../../../../../../helpers/StepsHeader";
 import ForgotFirstStep from "./steps/ForgotFirstStep";
+import ForgotSecondStep from "./steps/ForgotSecondStep";
 // MUI
 import { Box } from "@mui/material";
 
 function ForgotPage({ setActivePage }) {
   const [step, setStep] = useState(1);
   const [username, setUserName] = useState("");
-  //   const [password, setPassword] = useState("");
+    const [identify, setIdentify] = useState("");
 
   const steps = {
     step: step,
@@ -28,10 +29,17 @@ function ForgotPage({ setActivePage }) {
         setActivePage={setActivePage}
         username={username}
         setUserName={setUserName}
-        setStep = {setStep}
+        setStep={setStep}
       />
     ),
-    2: "",
+    2: (
+      <ForgotSecondStep
+        setActivePage={setActivePage}
+        identify = {identify}
+        setIdentify = {setIdentify}
+        setStep={setStep}
+      />
+    ),
   };
 
   return (
@@ -43,7 +51,6 @@ function ForgotPage({ setActivePage }) {
         setStep={setStep}
         setActivePage={setActivePage}
       />
-      <StepsHeader title="Find your Twitter account" />
       {stage[step]}
     </Box>
   );
