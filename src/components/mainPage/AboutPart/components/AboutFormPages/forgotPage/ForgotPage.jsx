@@ -4,9 +4,10 @@ import React, { useState } from "react";
 import ForgotHeader from "./components/Header";
 import ForgotFirstStep from "./steps/ForgotFirstStep";
 import ForgotSecondStep from "./steps/ForgotSecondStep";
+import ForgotThirdStep from "./steps/ForgotThirdStep";
+import ForgotForthStep from "./steps/ForgotForthStep";
 // MUI
 import { Box } from "@mui/material";
-import ForgotThirdStep from "./steps/ForgotThirdStep";
 
 function ForgotPage({ setActivePage }) {
   const [step, setStep] = useState(1);
@@ -40,12 +41,8 @@ function ForgotPage({ setActivePage }) {
         setStep={setStep}
       />
     ),
-    3: (
-      <ForgotThirdStep
-        setActivePage={setActivePage}
-        setStep={setStep}
-      />
-    ),
+    3: <ForgotThirdStep setActivePage={setActivePage} setStep={setStep} />,
+    4: <ForgotForthStep setActivePage={setActivePage} setStep={setStep} />,
   };
 
   return (
