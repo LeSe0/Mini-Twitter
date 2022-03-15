@@ -42,12 +42,14 @@ function Login({ setActivePage }) {
         step={step}
         setStep={setStep}
         setActivePage={setActivePage}
-        fStepvalue={fStepvalue}
+        username={fStepvalue}
         setPassword={setPassword}
         password = {password}
       />
     ),
   };
+
+  console.log(fStepvalue);
 
   return (
     <Box>

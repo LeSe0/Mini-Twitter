@@ -36,8 +36,8 @@ function LoginFirstStep({
       <StepsHeader title="Sign in to Twitter" />
       <CustomTextField
         labelText="Phone, email, or username"
-        fStepvalue={fStepvalue}
-        setfStepvalue={setfStepValue}
+        value={fStepvalue}
+        setValue={setfStepValue}
       />
       <NextButton
         name="Next"

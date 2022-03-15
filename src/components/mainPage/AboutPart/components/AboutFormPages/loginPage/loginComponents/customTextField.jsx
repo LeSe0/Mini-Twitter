@@ -1,11 +1,14 @@
 // React
-import React from "react";
+import React, { useState } from "react";
 // MUI
-import { TextField } from "@mui/material";
+import { TextField , InputAdornment, IconButton} from "@mui/material";
 import { Box } from "@mui/material";
 import { makeStyles } from "@mui/styles";
+// import { TextField, InputAdornment, IconButton } from "@mui/core";
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
-function CustomTextField({labelText, fStepvalue, setfStepvalue}) {
+function CustomTextField({labelText, value, setValue , disabled, type}) {
   const useStyles = makeStyles((theme) => ({
     formControl: {
       "& .MuiInputBase-root:before": {
@@ -41,6 +44,12 @@ function CustomTextField({labelText, fStepvalue, setfStepvalue}) {
 
   const { label, formControl } = useStyles();
 
+
+  // password show or hidden
+  const [showPassword, setShowPassword] = useState(false);
+  const handleClickShowPassword = () => setShowPassword(!showPassword);
+  const handleMouseDownPassword = () => setShowPassword(!showPassword);
+
   return (
     <Box
       sx={{
@@ -48,12 +57,14 @@ function CustomTextField({labelText, fStepvalue, setfStepvalue}) {
       }}
     >
       <TextField
-        value={fStepvalue}
+        disabled = {disabled ? disabled : false}
+        value={value}
         className={formControl}
         fullWidth
+        type = {type && showPassword ? type : "text"}
         variant="filled"
         onChange = {(e) =>{
-            setfStepvalue(e.target.value)
+            setValue(e.target.value)
         }}
         label={labelText}
         sx={{
@@ -61,6 +72,20 @@ function CustomTextField({labelText, fStepvalue, setfStepvalue}) {
         }}
         InputProps={{
           disableUnderline: true,
+          endAdornment: (
+            type == "password" ? 
+              <InputAdornment position="end">
+              <IconButton
+                aria-label="toggle password visibility"
+                onClick={handleClickShowPassword}
+                onMouseDown={handleMouseDownPassword}
+              >
+                {showPassword ? <VisibilityIcon /> : <VisibilityOff />}
+              </IconButton>
+            </InputAdornment>
+            : ''
+          )
+      
         }}
         inputProps={{
           maxLength: 50,
