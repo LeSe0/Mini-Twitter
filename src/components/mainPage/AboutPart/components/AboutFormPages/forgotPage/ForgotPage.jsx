@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 // components
 import ForgotHeader from "./components/Header";
-import StepsHeader from "../../../../../../helpers/StepsHeader";
 import ForgotFirstStep from "./steps/ForgotFirstStep";
 import ForgotSecondStep from "./steps/ForgotSecondStep";
 // MUI
