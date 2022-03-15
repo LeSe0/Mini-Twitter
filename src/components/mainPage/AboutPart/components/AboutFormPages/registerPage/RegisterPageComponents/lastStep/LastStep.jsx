@@ -44,21 +44,21 @@ function LastStep({
         labelText="Name"
         setStep={setStep}
         goX="0"
-        goY="550"
+        goY="500"
       />
       <CustomTextField
         value={email ? email : phone}
         labelText="Phone"
         setStep={setStep}
         goX="0"
-        goY="550"
+        goY="500"
       />
       <CustomTextField
         value={date}
         labelText="Birth date"
         setStep={setStep}
         goX="0"
-        goY="550"
+        goY="500"
       />
 
       <Footer />
