@@ -1,17 +1,17 @@
 // React
 import React, { useState } from "react";
 // components
-
-import NextButton from "../../../../../../helpers/NextButton";
 import LoginFirstStep from "./loginSteps/firstStep";
 import LoginHeader from "./loginComponents/Header";
 import SecondStep from "./loginSteps/secondStep";
+import FooterOverlay from "./loginSteps/overLays/footerOverlay";
 // MUI
 import { Box } from "@mui/material";
 
 function Login({ setActivePage }) {
   const [step, setStep] = useState(1);
   const [fStepvalue, setfStepValue] = useState("");
+  const [password, setPassword] = useState("");
 
   const steps = {
     step: step,
@@ -24,28 +24,29 @@ function Login({ setActivePage }) {
   };
 
   const stage = {
-      1 : <LoginFirstStep
-      data={data}
-      steps={steps}
-      step={step}
-      setStep={setStep}
-      setActivePage={setActivePage}
-      fStepvalue = {fStepvalue}
-      setfStepValue = {setfStepValue}
-    />,
-    2 : <SecondStep />
-  }
-
-  const forgotBtnData = {
-    color: "#0F1419",
-    borderColor: "rgb(207, 217, 222)",
-    backgroundColor: "#fff",
-    focusedColor: "white",
-    focusedBackground: "rgba(15, 20, 25, 0.1)",
-    focusedBorder: "rgba(0,0,0,0)",
-    disabledColor: "white",
-    disabledBackground: "gray",
-    disabledBorder: "blue",
+    1: (
+      <LoginFirstStep
+        data={data}
+        steps={steps}
+        step={step}
+        setStep={setStep}
+        setActivePage={setActivePage}
+        fStepvalue={fStepvalue}
+        setfStepValue={setfStepValue}
+      />
+    ),
+    2: (
+      <SecondStep
+        data={data}
+        steps={steps}
+        step={step}
+        setStep={setStep}
+        setActivePage={setActivePage}
+        fStepvalue={fStepvalue}
+        setPassword={setPassword}
+        password = {password}
+      />
+    ),
   };
 
   return (
@@ -58,21 +59,7 @@ function Login({ setActivePage }) {
         setActivePage={setActivePage}
       />
       {stage[step]}
-      <Box
-        sx={{
-          marginTop: "15px",
-        }}
-        component = "div"
-        onClick={() =>{
-            setActivePage('forgotPasswordPage');
-        }}
-      >
-        <NextButton
-          name="Forgot password?"
-          disabled={false}
-          btnData={forgotBtnData}
-        />
-      </Box>
+      <FooterOverlay setActivePage={setActivePage} />
     </Box>
   );
 }
