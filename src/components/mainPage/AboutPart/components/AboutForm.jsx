@@ -1,13 +1,14 @@
 // React
 import React, {useState} from "react";
 // images
-import FormAuthByButtons from "./components/formAuthByButtons";
 import { ReactComponent as GoogleLogo } from "../../../../images/googleLogo.svg";
 import { ReactComponent as AppleLogo } from "../../../../images/appleLogo.svg";
 // components
 import DefaultPage from "./AboutFormPages/DefaultPage";
-import RegisterPage from "./AboutFormPages/registerPage/RegisterPage"
+import RegisterPage from "./AboutFormPages/registerPage/RegisterPage";
 import Login from "./AboutFormPages/loginPage/Login";
+import ForgotPage from "./AboutFormPages/forgotPage/ForgotPage";
+import FormAuthByButtons from "./components/formAuthByButtons";
 
 function AboutForm() {
   const buttonsFirstData = [
@@ -29,7 +30,7 @@ function AboutForm() {
     defaultPage : <DefaultPage setActivePage = {setActivePage}/>,
     registerPage : <RegisterPage setActivePage = {setActivePage}/>,
     loginPage : <Login setActivePage = {setActivePage}/>,
-    forgotPasswordPage : ""
+    forgotPasswordPage : <ForgotPage setActivePage = {setActivePage}/>
   }
 
   return (
