@@ -18,17 +18,17 @@ button {
 /* Auth Part */
 
 .bigIconPart {
-  @apply bg-bigImageStartPage w-full min-h-[45vh] h-full bg-center bg-cover bg-no-repeat
+  @apply bg-bigImageStartPage w-full min-h-[45vh] h-full bg-center bg-no-repeat
     relative flex justify-center items-center;
 }
 
 .bigIconPart svg {
-  @apply fill-[#fff] lg:h-[59%] p-[32px] h-[270px] lg:w-auto;
+  @apply fill-[#fff] p-[32px] h-[270px] lg:w-auto;
 }
 
-.bigIconPart svg path {
-  @apply h-full w-full;
-}
+/* .bigIconPart svg path {
+  @apply h-[150px] w-[150px];
+} */
 
 .authPartContainer {
   @apply p-[16px] maxlg:max-w-[600px] maxlg:mx-auto;
