@@ -7,15 +7,16 @@ import ForgotFirstStep from "./steps/ForgotFirstStep";
 import ForgotSecondStep from "./steps/ForgotSecondStep";
 // MUI
 import { Box } from "@mui/material";
+import ForgotThirdStep from "./steps/ForgotThirdStep";
 
 function ForgotPage({ setActivePage }) {
   const [step, setStep] = useState(1);
   const [username, setUserName] = useState("");
-    const [identify, setIdentify] = useState("");
+  const [identify, setIdentify] = useState("");
 
   const steps = {
     step: step,
-    stepsCount: 3,
+    stepsCount: 4,
   };
 
   const data = {
@@ -35,8 +36,14 @@ function ForgotPage({ setActivePage }) {
     2: (
       <ForgotSecondStep
         setActivePage={setActivePage}
-        identify = {identify}
-        setIdentify = {setIdentify}
+        identify={identify}
+        setIdentify={setIdentify}
+        setStep={setStep}
+      />
+    ),
+    3: (
+      <ForgotThirdStep
+        setActivePage={setActivePage}
         setStep={setStep}
       />
     ),
